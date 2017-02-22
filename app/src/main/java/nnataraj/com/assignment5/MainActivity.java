@@ -1,5 +1,6 @@
 package nnataraj.com.assignment5;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -75,6 +76,7 @@ public class MainActivity extends AppCompatActivity
                         .commit();
                 break;
             case R.id.nav_task_2:
+                startActivity(new Intent(this,Task2Activity.class));
                 break;
             case R.id.nav_task_3:
                 break;
