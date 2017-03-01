@@ -34,7 +34,7 @@ public class MyMovieItemRecyclerViewAdapter extends RecyclerView.Adapter<MyMovie
         View view;
 
         view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_movieitem, parent, false);
+                        .inflate(R.layout.fragment_movieitem, parent, false);
 
         return new ViewHolder(view);
     }
@@ -45,11 +45,10 @@ public class MyMovieItemRecyclerViewAdapter extends RecyclerView.Adapter<MyMovie
         holder.mTitle.setText((String) holder.mItem.get("name"));
         holder.mDescription.setText((String) holder.mItem.get("description"));
         holder.mIcon.setImageResource((int) (Object) holder.mItem.get("image"));
-        holder.mCheckBox.setChecked((boolean) (Object) holder.mItem.get("selection"));
         holder.mYear.setText((String) holder.mItem.get("year"));
         holder.mRatingBar.setRating(((float) (double) (Object) holder.mItem.get("rating")) / 2f);
 
-        holder.mCheckBox.setOnClickListener(new View.OnClickListener() {
+        holder.mMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
@@ -94,7 +93,7 @@ public class MyMovieItemRecyclerViewAdapter extends RecyclerView.Adapter<MyMovie
         public final TextView mTitle;
         public final TextView mDescription;
         public final ImageView mIcon;
-        public final CheckBox mCheckBox;
+        public final ImageView mMenu;
         public final TextView mYear;
         public final RatingBar mRatingBar;
         public Map<String, ?> mItem;
@@ -105,7 +104,7 @@ public class MyMovieItemRecyclerViewAdapter extends RecyclerView.Adapter<MyMovie
             mTitle = (TextView) view.findViewById(R.id.title);
             mDescription = (TextView) view.findViewById(R.id.description);
             mIcon = (ImageView) view.findViewById(R.id.movie_icon);
-            mCheckBox = (CheckBox) view.findViewById(R.id.checkBox);
+            mMenu = (ImageView) view.findViewById(R.id.ic_more);
             mYear = (TextView) view.findViewById(R.id.year);
             mRatingBar = (RatingBar) view.findViewById(R.id.ratingBar);
         }

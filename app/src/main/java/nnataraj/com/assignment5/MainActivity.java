@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity
                 startActivity(new Intent(this,Task2Activity.class));
                 break;
             case R.id.nav_task_3:
+                startActivity(new Intent(this,Task3Activity.class));
                 break;
         }
 

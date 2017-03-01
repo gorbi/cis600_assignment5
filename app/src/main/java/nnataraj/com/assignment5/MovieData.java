@@ -7,6 +7,17 @@ import java.util.Map;
 
 public class MovieData {
 
+    public int find(String name) {
+        int pos = -1;
+        for (int i=0;i<moviesList.size();i++) {
+            if(name.equalsIgnoreCase((String)moviesList.get(i).get("name"))) {
+                pos =i;
+                break;
+            }
+        }
+        return pos;
+    }
+
     List<Map<String, ?>> moviesList;
 
     public List<Map<String, ?>> getMoviesList() {
